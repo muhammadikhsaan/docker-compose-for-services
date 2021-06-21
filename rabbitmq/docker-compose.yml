@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+    rabbitmq3-management:
+        container_name: mqm.learning_services
+        image: rabbitmq:3.8.17-management
+        environment:
+            RABBITMQ_ERLANG_COOKIE: learningservice
+            RABBITMQ_DEFAULT_USER: learningservice
+            RABBITMQ_DEFAULT_PASS: learningservice
+        ports :
+            - 15672:15672
+            - 5672:5672
+        volumes:
+            - ./data:/var/lib/rabbitmq

@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  redis:
+    container_name: redis.learning_services
+    image: bitnami/redis:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 6379:6379
